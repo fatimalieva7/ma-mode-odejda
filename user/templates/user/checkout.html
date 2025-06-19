@@ -7,7 +7,7 @@
 
         <div class="checkout__form">
             <h4>Оформление заказа</h4>
-            <form method="POST" action="{% url 'market:process-order' %}" id="checkoutForm">
+            <form method="POST" action="{% url 'user:process-order' %}" id="checkoutForm">
                 {% csrf_token %}
                 <div class="row">
                     <div class="col-lg-8 col-md-6">

@@ -46,7 +46,11 @@
         <div class="humberger__menu__widget">
 
             <div class="header__top__right__auth">
-                <a href="#"><i class="fa fa-user"></i> Login</a>
+<!--                <a href="#"><i class="fa fa-user"></i> Login</a>-->
+                                                {% if user.is_authenticated %}
+                                <a href="{% url 'user:logout' %}"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                                {% else %}
+                                <a href="{% url 'user:register' %}"><i class="fa fa-user"></i> Login</a> {% endif %}
             </div>
         </div>
         <nav class="humberger__menu__nav mobile-menu">
@@ -56,11 +60,11 @@
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="{% url 'market:shoping-cart' %}">Shoping Cart</a></li>
-                        <li><a href="{% url 'market:checkout' %}">Check Out</a></li>
+                        <li><a href="{% url 'user:checkout' %}">Check Out</a></li>
 
                     </ul>
                 </li>
-                <li><a href="{% url 'market:contact' %}">Contact</a></li>
+                <li><a href="{% url 'user:contact' %}">Contact</a></li>
             </ul>
         </nav>
         <div id="mobile-menu-wrap"></div>
@@ -107,9 +111,9 @@
                             </div>
                             <div class="header__top__right__auth">
                                 {% if user.is_authenticated %}
-                                <a href="{% url 'market:logout' %}"><i class="bi bi-box-arrow-right"></i> Logout</a>
+                                <a href="{% url 'user:logout' %}"><i class="bi bi-box-arrow-right"></i> Logout</a>
                                 {% else %}
-                                <a href="{% url 'market:register' %}"><i class="fa fa-user"></i> Login</a> {% endif %}
+                                <a href="{% url 'user:register' %}"><i class="fa fa-user"></i> Login</a> {% endif %}
                             </div>
                         </div>
                     </div>
@@ -131,10 +135,10 @@
                             <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="{% url 'market:shoping-cart' %}">Shoping Cart</a></li>
-                                    <li><a href="{% url 'market:checkout' %}">Check Out</a></li>
+                                    <li><a href="{% url 'user:checkout' %}">Check Out</a></li>
                                 </ul>
                             </li>
-                            <li><a href="{% url 'market:contact' %}">Contact</a></li>
+                            <li><a href="{% url 'user:contact' %}">Contact</a></li>
                         </ul>
                     </nav>
                 </div>
