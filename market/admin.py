@@ -5,6 +5,7 @@ from .models import Image, ProductIndex, ProductClothing, CategoryClothing
 admin.site.register(Image)
 admin.site.register(ProductIndex)
 
+
 @admin.register(CategoryClothing)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['name', 'slug']

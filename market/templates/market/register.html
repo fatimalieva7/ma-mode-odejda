@@ -1,0 +1,29 @@
+{% extends 'market/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="mb-4 text-center">Регистрация</h2>
+
+    <form method="post" class="mx-auto" style="max-width: 500px;">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label for="id_username" class="form-label">Имя пользователя</label>
+            {{ form_register_user.username }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_email" class="form-label">Email</label>
+            {{ form_register_user.email }}
+        </div>
+
+        <div class="mb-3">
+            <label for="id_password" class="form-label">Пароль</label>
+            {{ form_register_user.password }}
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Зарегистрироваться</button>
+    </form>
+</div>
+{% endblock %}

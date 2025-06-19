@@ -1,0 +1,120 @@
+{% extends 'market/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="checkout spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="order-success">
+                    <div class="success-icon">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h2>Ваш заказ успешно оформлен!</h2>
+                    <div class="order-details">
+                        <p><strong>Номер заказа:</strong> #{{ order_number }}</p>
+                        <p><strong>Дата доставки:</strong> {{ delivery_date }}</p>
+                        <p><strong>Способ оплаты:</strong> {{ payment_method }}</p>
+                        <p><strong>Итого к оплате:</strong> ${{ total }}</p>
+                    </div>
+                    <div class="delivery-info">
+                        <h5>Информация о доставке</h5>
+                        <p>{{ customer_name }}, ваш заказ будет доставлен по адресу:</p>
+                        <p class="address">{{ address }}</p>
+                        <p>Мы отправили детали заказа на {{ email }}. Вы получите уведомление, когда заказ будет отправлен.</p>
+                    </div>
+                    <div class="action-buttons">
+                        <a href="{% url 'market:shop-grid' %}" class="primary-btn">Продолжить покупки</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .order-success {
+        text-align: center;
+        padding: 50px 30px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        margin: 40px 0;
+    }
+
+    .success-icon {
+        color: #7fad39;
+        font-size: 80px;
+        margin-bottom: 25px;
+    }
+
+    .order-success h2 {
+        color: #7fad39;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    .order-details {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        max-width: 500px;
+        margin: 0 auto 30px;
+        text-align: left;
+    }
+
+    .order-details p {
+        margin-bottom: 10px;
+        font-size: 16px;
+    }
+
+    .order-details strong {
+        color: #333;
+        min-width: 150px;
+        display: inline-block;
+    }
+
+    .delivery-info {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        padding: 20px;
+        background: #f5f9ff;
+        border-radius: 8px;
+    }
+
+    .delivery-info h5 {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    .address {
+        font-weight: bold;
+        margin: 15px 0;
+        padding: 10px;
+        background: white;
+        border-radius: 5px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .secondary-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #f5f5f5;
+        color: #333;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .secondary-btn:hover {
+        background: #e0e0e0;
+        color: #333;
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,112 @@
+{% extends 'market/base.html' %}
+{% load static %}
+
+{% block content %}
+<section class="checkout spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="order-confirmed">
+                    <div class="confirmed-icon">
+                        <i class="fa fa-check-circle"></i>
+                    </div>
+                    <h2>Ваше сообщение успешно отправлено!</h2>
+
+                    <div class="confirmation-details">
+                        <p>Мы получили ваше сообщение и свяжемся с вами в ближайшее время.</p>
+                        <p>Для срочных вопросов вы можете позвонить нам:</p>
+                        <div class="contact-info">
+                            <i class="fa fa-phone"></i> +7 (123) 456-78-90
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <a href="{% url 'market:index' %}" class="primary-btn">На главную</a>
+                        <a href="{% url 'market:contact' %}" class="secondary-btn">Отправить ещё одно сообщение</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .order-confirmed {
+        text-align: center;
+        padding: 50px 30px;
+        background: #f9f9f9;
+        border-radius: 10px;
+        margin: 40px 0;
+    }
+
+    .confirmed-icon {
+        color: #7fad39;
+        font-size: 80px;
+        margin-bottom: 25px;
+    }
+
+    .order-confirmed h2 {
+        color: #7fad39;
+        margin-bottom: 30px;
+        font-weight: 700;
+    }
+
+    .confirmation-details {
+        max-width: 600px;
+        margin: 0 auto 40px;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    .contact-info {
+        margin-top: 20px;
+        padding: 15px;
+        background: white;
+        border-radius: 5px;
+        display: inline-block;
+        font-size: 18px;
+    }
+
+    .contact-info i {
+        color: #7fad39;
+        margin-right: 10px;
+    }
+
+    .action-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .primary-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #7fad39;
+        color: white;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .primary-btn:hover {
+        background: #6b9a2a;
+        color: white;
+    }
+
+    .secondary-btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: #f5f5f5;
+        color: #333;
+        border-radius: 4px;
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .secondary-btn:hover {
+        background: #e0e0e0;
+        color: #333;
+    }
+</style>
+{% endblock %}

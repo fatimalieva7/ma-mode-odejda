@@ -37,7 +37,7 @@
         {% for item in cart_items %}
         <tr>
             <td class="shoping__cart__item">
-                <img src="{{ item.image }}" alt="{{ item.product.name }}">
+                <img src="{{ item.product.image }}" alt="{{ item.product.name }}">
                 <h5>{{ item.product.name }}</h5>
                 {% if item.size %}<p>Size: {{ item.size }}</p>{% endif %}
                 {% if item.color %}<p>Color: {{ item.color }}</p>{% endif %}
@@ -86,7 +86,13 @@
                         <li>Subtotal <span>${{ subtotal }}</span></li>
                         <li>Total <span>${{ total }}</span></li>
                     </ul>
-                    <a href="{% url 'market:checkout' %}" class="primary-btn">PROCEED TO CHECKOUT</a>
+{% if request.user.is_authenticated %}
+                    <a href="{% url 'market:register' %}?next={% url 'market:checkout' %}">
+                        <button type="button" class="primary-btn">Proceed to checkout</button>
+{% endif %}
+
+
+
                 </div>
             </div>
         </div>
