@@ -55,6 +55,9 @@ def shop_details(request, slug):
         'product': product,
         'related_products': related_products
     })
+
+
+
 def shoping_cart(request):
     return render(request, 'market/shoping-cart.html')
 
